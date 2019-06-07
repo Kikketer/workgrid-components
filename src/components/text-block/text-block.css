@@ -1,0 +1,9 @@
+:root {
+  background-color: orange;
+}
+
+.text-block {
+  margin: 5px 0;
+  color: var(--font-color-medium, #686868);
+  font-size: var(--font-size-medium, 0.8em);
+}

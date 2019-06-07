@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-  <script type="module" src="/build/workgrid-components.esm.js"></script>
-  <script nomodule src="/build/workgrid-components.esm.js"></script>
+    <!--  <link rel="stylesheet" href="/build/workgrid-components.css">-->
+    <script type="module" src="/build/workgrid-components.esm.js"></script>
+    <script nomodule src="/build/workgrid-components.esm.js"></script>
 
-</head>
-<body>
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 50%;
+      }
 
-  <my-component first="Chris" last="Weed"></my-component>
-  <workgrid-action label="Do something" beef="clickIt()" onClick="clickIt()"></workgrid-action>
+      .themed-action {
+        --actions-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <sn-action label="Do something" onClick="clickIt()" class="themed-action"></sn-action>
+      <sn-text-block>HI there</sn-text-block>
 
-<script>
-  function clickIt() {
-    console.log('YOu clicked stuff')
-  }
-</script>
-</body>
+      <hr />
+      <p>Smart Notification:</p>
+
+      <sn-smart-notification
+        id="smart-note-1"
+        source-name="WkGrid"
+        source-image="https://cdn.dev.workgrid.com/connectors/lyssa_mock/logos/Workgrid-Logo.png"
+        sent-at="2019-06-06T21:01:23.387Z"
+      ></sn-smart-notification>
+    </div>
+
+    <script>
+      function clickIt() {
+        console.log('YOu clicked stuff')
+      }
+
+      var smartNoteOne = document.getElementById('smart-note-1')
+      smartNoteOne.addEventListener('onAction', function(e) {
+        console.log('Action happened ', e.detail)
+      })
+      smartNoteOne.addEventListener('showDetail', function(e) {
+        console.log('Showing detail ', e.detail)
+      })
+    </script>
+  </body>
 </html>

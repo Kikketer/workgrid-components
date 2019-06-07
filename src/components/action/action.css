@@ -1,3 +1,37 @@
-.thing {
-  color: var(--app-primary-color);
+* {
+  box-sizing: border-box;
 }
+
+.action {
+  width: calc(100% - 1em * 2);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 11px;
+  text-overflow: ellipsis;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+
+  font-weight: var(--font-weight-normal, 400);
+  font-size: var(--font-size-default, .8em);
+  margin: 1em;
+
+  color: var(--actions-color, blue);
+  background: var(--actions-background-color, white);
+  border-radius: var(--actions-border-radius, 2px);
+
+  text-transform: var(--actions-text-transform, none);
+}
+
+/*.action::first-letter {*/
+/*   text-transform: ${props =>*/
+/*      get(props.theme, 'actionButtons.textTransform') === 'sentence-case' ||*/
+/*      get(props.theme, 'actionButtons.textTransform') === 'uppercase'*/
+/*        ? 'uppercase'*/
+/*        : 'none'};*/
+/* }*/
+
+.action:last-child {
+   margin-bottom: 0;
+   margin-right: 0;
+ }

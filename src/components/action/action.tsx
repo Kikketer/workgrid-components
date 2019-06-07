@@ -1,17 +1,22 @@
-import {Component, Prop, h} from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core'
 
 @Component({
-  tag: 'workgrid-action',
+  tag: 'sn-action',
   styleUrl: 'action.css',
   shadow: true
 })
 export class Action {
-  /**
-   * The label
-   */
-  @Prop() label: string;
+  @Prop() label: string
+
+  handleClick = () => {
+    console.log('Action is doing something special')
+  }
 
   render() {
-    return <p class={'thing'}>{this.label}</p>;
+    return (
+      <button class={'action'} onClick={this.handleClick}>
+        {this.label}
+      </button>
+    )
   }
 }

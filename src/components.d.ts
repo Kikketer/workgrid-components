@@ -23,16 +23,76 @@ export namespace Components {
     */
     'middle': string;
   }
-  interface WorkgridAction {
-    /**
-    * The label
-    */
+  interface SnAction {
     'label': string;
+  }
+  interface SnImage {
+    'alt': string;
+    'src': string;
+  }
+  interface SnInfoHeader {
+    'sentAt': string;
+    'sourceImage': string;
+    'sourceName': string;
+  }
+  interface SnSmartNotification {
+    'sentAt': string;
+    'sourceImage': string;
+    'sourceName': string;
+  }
+  interface SnTextBlock {}
+}
+
+declare global {
+
+
+  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
+  var HTMLMyComponentElement: {
+    prototype: HTMLMyComponentElement;
+    new (): HTMLMyComponentElement;
+  };
+
+  interface HTMLSnActionElement extends Components.SnAction, HTMLStencilElement {}
+  var HTMLSnActionElement: {
+    prototype: HTMLSnActionElement;
+    new (): HTMLSnActionElement;
+  };
+
+  interface HTMLSnImageElement extends Components.SnImage, HTMLStencilElement {}
+  var HTMLSnImageElement: {
+    prototype: HTMLSnImageElement;
+    new (): HTMLSnImageElement;
+  };
+
+  interface HTMLSnInfoHeaderElement extends Components.SnInfoHeader, HTMLStencilElement {}
+  var HTMLSnInfoHeaderElement: {
+    prototype: HTMLSnInfoHeaderElement;
+    new (): HTMLSnInfoHeaderElement;
+  };
+
+  interface HTMLSnSmartNotificationElement extends Components.SnSmartNotification, HTMLStencilElement {}
+  var HTMLSnSmartNotificationElement: {
+    prototype: HTMLSnSmartNotificationElement;
+    new (): HTMLSnSmartNotificationElement;
+  };
+
+  interface HTMLSnTextBlockElement extends Components.SnTextBlock, HTMLStencilElement {}
+  var HTMLSnTextBlockElement: {
+    prototype: HTMLSnTextBlockElement;
+    new (): HTMLSnTextBlockElement;
+  };
+  interface HTMLElementTagNameMap {
+    'my-component': HTMLMyComponentElement;
+    'sn-action': HTMLSnActionElement;
+    'sn-image': HTMLSnImageElement;
+    'sn-info-header': HTMLSnInfoHeaderElement;
+    'sn-smart-notification': HTMLSnSmartNotificationElement;
+    'sn-text-block': HTMLSnTextBlockElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes {
+  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
     */
@@ -46,16 +106,34 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
-  interface WorkgridAction extends JSXBase.HTMLAttributes {
-    /**
-    * The label
-    */
+  interface SnAction extends JSXBase.HTMLAttributes<HTMLSnActionElement> {
     'label'?: string;
   }
+  interface SnImage extends JSXBase.HTMLAttributes<HTMLSnImageElement> {
+    'alt'?: string;
+    'src'?: string;
+  }
+  interface SnInfoHeader extends JSXBase.HTMLAttributes<HTMLSnInfoHeaderElement> {
+    'sentAt'?: string;
+    'sourceImage'?: string;
+    'sourceName'?: string;
+  }
+  interface SnSmartNotification extends JSXBase.HTMLAttributes<HTMLSnSmartNotificationElement> {
+    'onOnAction'?: (event: CustomEvent<any>) => void;
+    'onShowDetail'?: (event: CustomEvent<any>) => void;
+    'sentAt'?: string;
+    'sourceImage'?: string;
+    'sourceName'?: string;
+  }
+  interface SnTextBlock extends JSXBase.HTMLAttributes<HTMLSnTextBlockElement> {}
 
   interface IntrinsicElements {
     'my-component': MyComponent;
-    'workgrid-action': WorkgridAction;
+    'sn-action': SnAction;
+    'sn-image': SnImage;
+    'sn-info-header': SnInfoHeader;
+    'sn-smart-notification': SnSmartNotification;
+    'sn-text-block': SnTextBlock;
   }
 }
 
@@ -68,28 +146,4 @@ declare module "@stencil/core" {
   }
 }
 
-
-declare global {
-
-
-
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
-  interface HTMLWorkgridActionElement extends Components.WorkgridAction, HTMLStencilElement {}
-  var HTMLWorkgridActionElement: {
-    prototype: HTMLWorkgridActionElement;
-    new (): HTMLWorkgridActionElement;
-  };
-
-  interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
-    'workgrid-action': HTMLWorkgridActionElement;
-  }
-
-  interface ElementTagNameMap extends HTMLElementTagNameMap {}
-}
 
