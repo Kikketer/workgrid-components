@@ -25,6 +25,7 @@ export namespace Components {
   }
   interface SnAction {
     'label': string;
+    'type': string;
   }
   interface SnImage {
     'alt': string;
@@ -35,11 +36,7 @@ export namespace Components {
     'sourceImage': string;
     'sourceName': string;
   }
-  interface SnSmartNotification {
-    'sentAt': string;
-    'sourceImage': string;
-    'sourceName': string;
-  }
+  interface SnNotification {}
   interface SnTextBlock {}
 }
 
@@ -70,10 +67,10 @@ declare global {
     new (): HTMLSnInfoHeaderElement;
   };
 
-  interface HTMLSnSmartNotificationElement extends Components.SnSmartNotification, HTMLStencilElement {}
-  var HTMLSnSmartNotificationElement: {
-    prototype: HTMLSnSmartNotificationElement;
-    new (): HTMLSnSmartNotificationElement;
+  interface HTMLSnNotificationElement extends Components.SnNotification, HTMLStencilElement {}
+  var HTMLSnNotificationElement: {
+    prototype: HTMLSnNotificationElement;
+    new (): HTMLSnNotificationElement;
   };
 
   interface HTMLSnTextBlockElement extends Components.SnTextBlock, HTMLStencilElement {}
@@ -86,7 +83,7 @@ declare global {
     'sn-action': HTMLSnActionElement;
     'sn-image': HTMLSnImageElement;
     'sn-info-header': HTMLSnInfoHeaderElement;
-    'sn-smart-notification': HTMLSnSmartNotificationElement;
+    'sn-notification': HTMLSnNotificationElement;
     'sn-text-block': HTMLSnTextBlockElement;
   }
 }
@@ -108,6 +105,7 @@ declare namespace LocalJSX {
   }
   interface SnAction extends JSXBase.HTMLAttributes<HTMLSnActionElement> {
     'label'?: string;
+    'type'?: string;
   }
   interface SnImage extends JSXBase.HTMLAttributes<HTMLSnImageElement> {
     'alt'?: string;
@@ -118,13 +116,7 @@ declare namespace LocalJSX {
     'sourceImage'?: string;
     'sourceName'?: string;
   }
-  interface SnSmartNotification extends JSXBase.HTMLAttributes<HTMLSnSmartNotificationElement> {
-    'onOnAction'?: (event: CustomEvent<any>) => void;
-    'onShowDetail'?: (event: CustomEvent<any>) => void;
-    'sentAt'?: string;
-    'sourceImage'?: string;
-    'sourceName'?: string;
-  }
+  interface SnNotification extends JSXBase.HTMLAttributes<HTMLSnNotificationElement> {}
   interface SnTextBlock extends JSXBase.HTMLAttributes<HTMLSnTextBlockElement> {}
 
   interface IntrinsicElements {
@@ -132,7 +124,7 @@ declare namespace LocalJSX {
     'sn-action': SnAction;
     'sn-image': SnImage;
     'sn-info-header': SnInfoHeader;
-    'sn-smart-notification': SnSmartNotification;
+    'sn-notification': SnNotification;
     'sn-text-block': SnTextBlock;
   }
 }

@@ -1,4 +1,71 @@
 :root {
-  --primary: blue;
-  --app-primary-color: orange;
+  --notification-background: white;
+  --notification-shadow: 2px 2px 4px rgba(150, 150, 150, 0.6);
+
+  --textblock-color: #999999;
+  --textblock-link: #06748c;
+
+  --priority-informational: #343741;
+  --priority-important: #06748c;
+  --priority-critical: #d32f2f;
+
+  --category-informational-color: #343741;
+  --category-informational-background: #e6e6e6;
+  --category-important-color: #06748c;
+  --category-important-background: #c9f3f4;
+  --category-critical-color: #d32f2f;
+  --category-critical-background: #fbd3d8;
+
+  --newflag-icon: #f5a623;
+  --newflag-color: #343741;
+  --newflag-shadow: none;
+
+  --newbubble-color: #343741;
+  --newbubble-background: #f5a623;
+  --newbubble-shadow: none;
+
+  --actions-border-radius: 20px;
+  --actions-text-transform: sentence-case;
+  --actions-primary-color: #ffffff;
+  --actions-primary-border: none;
+  --actions-primary-background: #4a90e2;
+  --actions-secondary-color: #343741;
+  --actions-secondary-background: transparent;
+  --actions-secondary-border: 1px solid #343741;
+}
+
+:root.dark {
+  --notification-background: darkgrey;
+  --notification-shadow: 2px 2px 4px rgba(150, 150, 150, 0.6);
+
+  --textblock-color: #f5f5f5;
+  --textblock-link: #a7faff;
+
+  --priority-informational: #aad7e1;
+  --priority-important: #79d3d9;
+  --priority-critical: #e99380;
+
+  --category-informational-color: #a4acca;
+  --category-informational-background: #4f4f4f;
+  --category-important-color: #7ccadb;
+  --category-important-background: #4b8190;
+  --category-critical-color: #f39d9d;
+  --category-critical-background: #ac414b;
+
+  --newflag-icon: #f5a623;
+  --newflag-color: #343741;
+  --newflag-shadow: none;
+
+  --newbubble-color: #343741;
+  --newbubble-background: #f5a623;
+  --newbubble-shadow: none;
+
+  --actions-border-radius: 20px;
+  --actions-text-transform: sentence-case;
+  --actions-primary-color: #ffffff;
+  --actions-primary-border: none;
+  --actions-primary-background: #4a90e2;
+  --actions-secondary-color: #b5c5e4;
+  --actions-secondary-background: transparent;
+  --actions-secondary-border: 1px solid #a7b3d0;
 }

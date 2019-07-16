@@ -13,11 +13,11 @@
   cursor: pointer;
 
   font-weight: var(--font-weight-normal, 400);
-  font-size: var(--font-size-default, .8em);
+  font-size: var(--font-size-default, 0.8em);
   margin: 1em;
 
-  color: var(--actions-color, blue);
-  background: var(--actions-background-color, white);
+  color: var(--actions-color, grey);
+  background: var(--actions-primary-background, white);
   border-radius: var(--actions-border-radius, 2px);
 
   text-transform: var(--actions-text-transform, none);
@@ -32,6 +32,18 @@
 /* }*/
 
 .action:last-child {
-   margin-bottom: 0;
-   margin-right: 0;
- }
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+.primary {
+  color: var(--actions-primary-color, blue);
+  background: var(--actions-primary-background, white);
+  border: var(--actions-primary-border, 0px);
+}
+
+.secondary {
+  color: var(--actions-secondary-color, blue);
+  background: var(--actions-secondary-background, white);
+  border: var(--actions-secondary-border, 0px);
+}

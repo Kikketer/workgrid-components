@@ -1,7 +1,8 @@
-import { Config } from '@stencil/core';
+import { Config } from '@stencil/core'
 
 export const config: Config = {
   namespace: 'workgrid-components',
+  globalStyle: 'src/global/variables.css',
   outputTargets: [
     {
       type: 'dist',
@@ -15,4 +16,4 @@ export const config: Config = {
       serviceWorker: null // disable service workers
     }
   ]
-};
+}

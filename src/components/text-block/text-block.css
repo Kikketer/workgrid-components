@@ -4,6 +4,11 @@
 
 .text-block {
   margin: 5px 0;
-  color: var(--font-color-medium, #686868);
+  color: var(--textblock-color, #686868);
   font-size: var(--font-size-medium, 0.8em);
+}
+
+.text-block a,
+.text-block a:visited {
+  color: var(--textblock-link, blue);
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
@@ -9,11 +9,16 @@
     <script type="module" src="/build/workgrid-components.esm.js"></script>
     <script nomodule src="/build/workgrid-components.esm.js"></script>
 
+    <link rel="stylesheet" href="/build/workgrid-components.css" />
+
     <style>
       * {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+      }
+      :root.dark {
+        background: black;
       }
       .container {
         width: 50%;
@@ -26,23 +31,29 @@
   </head>
   <body>
     <div class="container">
-      <sn-action label="Do something" onClick="clickIt()" class="themed-action"></sn-action>
+      <sn-notification>
+        <sn-info-header
+          source-name="Workgrid"
+          source-image="https://cdn.dev.workgrid.com/connectors/lyssa_mock/logos/Workgrid-Blue-Logo.svg"
+          sent-at="2019-07-16T02:56:16.633Z"
+        ></sn-info-header>
+        <sn-text-block>This is a test text block that has a <a href="/">link</a> to another page.</sn-text-block>
+      </sn-notification>
+
+      <sn-action label="Primary Action" onClick="clickIt()" type="primary" class="themed-action"></sn-action>
+      <sn-action label="Secondary Action" onClick="clickIt()" type="secondary" class="themed-action"></sn-action>
       <sn-text-block>HI there</sn-text-block>
-
-      <hr />
-      <p>Smart Notification:</p>
-
-      <sn-smart-notification
-        id="smart-note-1"
-        source-name="WkGrid"
-        source-image="https://cdn.dev.workgrid.com/connectors/lyssa_mock/logos/Workgrid-Logo.png"
-        sent-at="2019-06-06T21:01:23.387Z"
-      ></sn-smart-notification>
     </div>
 
     <script>
       function clickIt() {
         console.log('YOu clicked stuff')
+        var dark = document.getElementsByClassName('dark')[0]
+        if (dark) {
+          dark.classList.remove('dark')
+        } else {
+          document.getElementsByTagName('html')[0].classList.add('dark')
+        }
       }
 
       var smartNoteOne = document.getElementById('smart-note-1')

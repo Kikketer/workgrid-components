@@ -7,6 +7,7 @@ import { Component, Prop, h } from '@stencil/core'
 })
 export class Action {
   @Prop() label: string
+  @Prop() type: string
 
   handleClick = () => {
     console.log('Action is doing something special')
@@ -14,7 +15,7 @@ export class Action {
 
   render() {
     return (
-      <button class={'action'} onClick={this.handleClick}>
+      <button class={`action ${this.type}`} onClick={this.handleClick}>
         {this.label}
       </button>
     )

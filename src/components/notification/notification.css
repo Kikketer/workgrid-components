@@ -1,0 +1,4 @@
+.notification {
+  background: var(--notification-background, white);
+  box-shadow: var(--notification-shadow, 3px 3px 6px rgba(150, 150, 150, 0.6));
+}
